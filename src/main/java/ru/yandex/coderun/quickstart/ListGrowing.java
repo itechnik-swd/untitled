@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 
 /**
  * 8. Возрастает ли список?
@@ -21,7 +20,7 @@ public class ListGrowing {
         writer.write(String.valueOf(n));
         */
 
-        int[] input = Arrays.stream(reader.readLine().split(" "))
+        int[] input = java.util.Arrays.stream(reader.readLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
 

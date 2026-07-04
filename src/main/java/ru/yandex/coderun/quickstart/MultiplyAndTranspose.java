@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 
 /**
  * 9. Умножай и транспонируй (столбцы становятся строками)!
@@ -15,7 +14,7 @@ public class MultiplyAndTranspose {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int[] input = Arrays.stream(reader.readLine().trim().split(" "))
+        int[] input = java.util.Arrays.stream(reader.readLine().trim().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
         int n = input[0];
@@ -24,7 +23,7 @@ public class MultiplyAndTranspose {
 
         int[][] matrixA = new int[n][m];
         for (int i = 0; i < n; i++) {
-            input = Arrays.stream(reader.readLine().trim().split(" "))
+            input = java.util.Arrays.stream(reader.readLine().trim().split(" "))
                     .mapToInt(Integer::parseInt)
                     .toArray();
             matrixA[i] = input;
@@ -32,7 +31,7 @@ public class MultiplyAndTranspose {
 
         int[][] matrixB = new int[m][k];
         for (int i = 0; i < m; i++) {
-            input = Arrays.stream(reader.readLine().trim().split(" "))
+            input = java.util.Arrays.stream(reader.readLine().trim().split(" "))
                     .mapToInt(Integer::parseInt)
                     .toArray();
             matrixB[i] = input;
@@ -55,7 +54,7 @@ public class MultiplyAndTranspose {
         }
 
         for (int[] row : matrixCT) {
-            writer.write(Arrays.toString(row).replaceAll("[\\[\\],]", "") + "\n");
+            writer.write(java.util.Arrays.toString(row).replaceAll("[\\[\\],]", "") + "\n");
         }
 
         reader.close();

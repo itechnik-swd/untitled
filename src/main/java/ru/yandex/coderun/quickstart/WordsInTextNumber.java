@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
 
 /**
  * 7. Количество слов в тексте
@@ -23,7 +22,7 @@ public class WordsInTextNumber {
         long count = reader.lines()
                 // Убираем takeWhile, если нужно читать до конца потока (EOF)
                 // .takeWhile(l -> !l.isBlank()) // <- если всё же нужно остановиться на пустой строке
-                .flatMap(l -> Arrays.stream(l.trim().split("\\s+")))
+                .flatMap(l -> java.util.Arrays.stream(l.trim().split("\\s+")))
                 .filter(s -> !s.isEmpty()) // Отсеиваем слова, которые состояли только из знаков препинания
                 .distinct()
                 .count();
