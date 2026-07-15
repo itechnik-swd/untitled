@@ -3,6 +3,7 @@ package org.streams;
 import org.util.User;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StreamExample {
     public static void main(String[] args) {
@@ -25,5 +26,11 @@ public class StreamExample {
 
         String cake = "\uD83C\uDF70";
         System.out.println(cake);
+
+        // Поток уже был использован, повторное терминальное действие вызывает исключение.
+        // IllegalStateException: stream has already been operated upon or closed
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4);
+//        long count = stream.filter(i -> i > 2).count();
+        stream.forEach(System.out::print);
     }
 }
