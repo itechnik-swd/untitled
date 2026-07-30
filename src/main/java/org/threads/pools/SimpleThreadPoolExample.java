@@ -1,4 +1,4 @@
-package org.threads;
+package org.threads.pools;
 
 public class SimpleThreadPoolExample {
     public static void main(String[] args) {
